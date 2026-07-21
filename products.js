@@ -1,91 +1,152 @@
 window.PRODUCTS = [
   {
-    "id": "barniz-marino-satinado",
-    "nombre": "Barniz Marino Satinado",
-    "categoria": "Maderas y barnices",
-    "unidad": "litros",
+    "id": "pintura-epoxi-cemento",
+    "nombre": "Pintura Epoxi - Superficie Cementicia",
+    "categoria": "Epoxi y pisos",
+    "unidad": "kg",
     "rendimiento": {
-      "min": 12,
-      "max": 12,
-      "type": "areaPerUnitPerCoat",
-      "display": "12 m² por litro y por mano"
+      "min": 1,
+      "max": 1,
+      "type": "quantityPerAreaFinished",
+      "display": "1,00 kg/m² de trabajo terminado"
     },
     "envases": [
-      0.25,
-      0.5,
-      1,
-      4,
-      20
+      0.26,
+      1.02,
+      4.08
     ],
+    "packageLabels": {
+      "0.26": "Kit 200 g A + 60 g B",
+      "1.02": "Kit 800 g A + 220 g B",
+      "4.08": "Kit 3200 g A + 880 g B"
+    },
     "manosDefault": 3,
     "manosOpciones": [
-      1,
-      2,
-      3,
-      4
+      3
     ],
-    "manosRecomendadas": "3 o 4 manos sobre madera nueva; 2 o 3 sobre superficies barnizadas en buen estado.",
-    "recomendaciones": "Puede aplicarse a pincel, rodillo o soplete. Sobre madera nueva: primera mano diluida 2:1 en aguarrás; luego barniz sin diluir.",
+    "manosRecomendadas": "El consumo indicado corresponde al trabajo terminado. La ficha describe una primera mano selladora y luego segunda y tercera mano.",
+    "recomendaciones": "Uso interior. Mezclar A+B durante 15 minutos. Primera mano diluida 50-100%; segunda y tercera con máximo 10%. Aplicar la mezcla antes de 4 horas.",
     "tiempos": {
-      "entreManos": "8 horas",
-      "final": "No especificado en la ficha",
-      "tacto": "5 horas"
+      "entreManos": "8 a 24 horas",
+      "final": "Alto impacto: 7 días",
+      "tacto": "Tránsito peatonal: 36 horas"
     },
-    "preparacion": "Superficies limpias, secas, desengrasadas, sin polvo ni barniz viejo mal adherido.",
-    "aplicacion": "Pincel, rodillo o soplete.",
-    "acabado": "Satinado",
-    "uso": "Protección y embellecimiento de maderas de uso exterior e interior."
+    "preparacion": "Superficie cementicia absorbente, limpia y porosa. No aplicar sobre pisos pulidos, cerámicos ni porcelanatos. Temperatura superior a 10 °C.",
+    "aplicacion": "Pincel o rodillo epoxi; también pulverizador según ficha.",
+    "acabado": "Duro, impermeable y resistente a la abrasión",
+    "uso": "Pisos y estructuras interiores de hormigón o mortero."
   },
   {
-    "id": "cielorraso",
-    "nombre": "Cielorraso",
-    "categoria": "Látex y cielorrasos",
-    "unidad": "litros",
+    "id": "pintura-epoxi-metal",
+    "nombre": "Pintura Epoxi - Superficie Metálica",
+    "categoria": "Epoxi y pisos",
+    "unidad": "kg",
     "rendimiento": {
-      "min": 8,
-      "max": 12,
-      "type": "areaPerUnitPerCoat",
-      "display": "8 a 12 m² por litro y por mano"
+      "min": 0.12,
+      "max": 0.14,
+      "type": "quantityPerAreaPerCoat",
+      "display": "0,12 a 0,14 kg/m² por mano, a 50 μm de película seca"
     },
     "envases": [
-      1,
-      4,
-      10,
-      20
+      0.26,
+      1.02,
+      4.08
     ],
+    "packageLabels": {
+      "0.26": "Kit 200 g A + 60 g B",
+      "1.02": "Kit 800 g A + 220 g B",
+      "4.08": "Kit 3200 g A + 880 g B"
+    },
     "manosDefault": 2,
     "manosOpciones": [
       1,
       2,
       3
     ],
-    "manosRecomendadas": "Segunda mano, de ser necesaria, a las 4 horas.",
-    "recomendaciones": "Si la absorción lo exige, agregar la mínima cantidad de agua necesaria.",
+    "manosRecomendadas": "Según protección requerida; la ficha informa consumo por cada mano de 50 micrómetros.",
+    "recomendaciones": "Uso interior. Mezclar los dos componentes completos. No usar diluyentes distintos del epoxi o poliuretánico recomendado.",
     "tiempos": {
-      "entreManos": "4 horas (segunda mano si es necesaria)",
-      "final": "No especificado en la ficha",
-      "tacto": "4 horas"
+      "entreManos": "8 a 24 horas",
+      "final": "Alto impacto: 7 días",
+      "tacto": "Tránsito peatonal: 36 horas"
     },
-    "preparacion": "Superficie limpia, sin grasa ni polvo. Las manchas de hongos se lavan con lavandina y se enjuagan con abundante agua.",
-    "aplicacion": "Rodillo, pincel, soplete o máquina pulverizadora.",
-    "acabado": "Mate",
-    "uso": "Cielorrasos de revoque; útil en cocinas, baños, lavaderos y ambientes con condensación."
+    "preparacion": "Metal limpio, seco, desengrasado y correctamente acondicionado. Temperatura superior a 10 °C.",
+    "aplicacion": "Pincel, rodillo epoxi o pulverizador.",
+    "acabado": "Duro, impermeable y resistente a la abrasión",
+    "uso": "Acero, aluminio y estructuras metálicas interiores."
   },
   {
-    "id": "concentrado-interior-exterior",
-    "nombre": "Concentrado Interior / Exterior",
-    "categoria": "Látex interior y exterior",
+    "id": "porcelanato-liquido-autonivelante",
+    "nombre": "Porcelanato Líquido Cristal - Autonivelante",
+    "categoria": "Epoxi y pisos",
+    "calculable": false,
+    "unidad": "kit",
+    "rendimiento": {
+      "display": "1 litro/m² por mano; la ficha comercializa juegos por peso"
+    },
+    "envases": [],
+    "packageLabels": {
+      "0.75": "Kit 500 g A + 250 g B",
+      "3": "Kit 2000 g A + 1000 g B"
+    },
+    "manosDefault": 1,
+    "manosOpciones": [
+      1
+    ],
+    "manosRecomendadas": "1 mano autonivelante, sin superar 8 mm de espesor.",
+    "recomendaciones": "No se calcula automáticamente porque la ficha expresa el rendimiento en litros pero los juegos comerciales en gramos, sin informar una conversión de densidad. Consultar al Departamento Técnico para convertir superficie a kits.",
+    "tiempos": {
+      "entreManos": "No especificado",
+      "final": "7 días",
+      "tacto": "6 horas; tránsito peatonal 48 horas"
+    },
+    "preparacion": "Superficie limpia y preparada. Uso interior.",
+    "aplicacion": "Mezclar A+B lentamente durante un minuto, verter y esparcir con espátula o llana dentada en 30-40 minutos.",
+    "acabado": "Brillante y autonivelante",
+    "uso": "Pisos, mesas, mesadas, cuadros y pisos 3D sobre madera, concreto, cerámica, cemento u hormigón."
+  },
+  {
+    "id": "porcelanato-liquido-sellador",
+    "nombre": "Porcelanato Líquido Cristal - Sellador para Cemento Alisado",
+    "categoria": "Epoxi y pisos",
+    "calculable": false,
+    "unidad": "kit",
+    "rendimiento": {
+      "display": "16 m² por litro y por mano, mezclado con igual volumen de Diluyente Epoxi"
+    },
+    "envases": [],
+    "manosDefault": 1,
+    "manosOpciones": [
+      1
+    ],
+    "manosRecomendadas": "1 mano como sellador, con mezcla A+B y Diluyente Epoxi en relación 1:1.",
+    "recomendaciones": "No se calcula automáticamente porque el rendimiento está expresado en volumen y los kits en peso. Consultar equivalencia de cada kit con el Departamento Técnico.",
+    "tiempos": {
+      "entreManos": "24 horas",
+      "final": "7 días",
+      "tacto": "6 horas; tránsito peatonal 24 horas"
+    },
+    "preparacion": "Limpiar, tratar con ácido muriático o Limpiador Restos de Obra 50/50 con agua, hidrolavar y esperar 24 horas.",
+    "aplicacion": "Mezclar A+B, incorporar igual volumen de Diluyente Epoxi antes de 5 minutos y aplicar con rodillo epoxi.",
+    "acabado": "Transparente brillante",
+    "uso": "Sellado interior de pisos de cemento alisado."
+  },
+  {
+    "id": "esmalte-sintetico-mate",
+    "nombre": "Esmalte Sintético Mate",
+    "categoria": "Esmaltes",
     "unidad": "litros",
     "rendimiento": {
-      "min": 9,
-      "max": 14,
+      "min": 15,
+      "max": 15,
       "type": "areaPerUnitPerCoat",
-      "display": "9 a 14 m² por litro y por mano"
+      "display": "15 m² por litro y por mano"
     },
     "envases": [
+      0.25,
+      0.5,
       1,
       4,
-      10,
       20
     ],
     "manosDefault": 2,
@@ -95,16 +156,16 @@ window.PRODUCTS = [
       3
     ],
     "manosRecomendadas": "No especificado en la ficha.",
-    "recomendaciones": "Aplicar con consistencia normal o diluido con 5 a 15% de agua, dejando pasar por lo menos 4 horas entre manos.",
+    "recomendaciones": "Aplicar con consistencia normal o diluido con aguarrás mineral de buena calidad.",
     "tiempos": {
-      "entreManos": "4 horas",
-      "final": "7 días",
-      "tacto": "1 hora"
+      "entreManos": "12 horas",
+      "final": "24 horas",
+      "tacto": "2 horas"
     },
-    "preparacion": "Superficies limpias, secas, desengrasadas, sin polvo ni pintura vieja mal adherida. Eliminar hongos con solución de lavandina y enjuagar.",
+    "preparacion": "Superficies limpias, secas y desengrasadas, libres de óxido y polvo. Manchas de hongos: lavar con lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete.",
     "acabado": "Mate",
-    "uso": "Interior y exterior: revoque, cemento, ladrillo, frentes, yeso, paneles, fibrocemento, madera, metal y más."
+    "uso": "Superficies interiores: revoque, yeso, paneles, fibrocemento, ladrillo y más."
   },
   {
     "id": "esmalte-al-agua",
@@ -176,21 +237,122 @@ window.PRODUCTS = [
     "uso": "Paredes de azulejos o cerámicos en interior y exterior: baños, lavaderos y cocinas."
   },
   {
-    "id": "esmalte-sintetico-mate",
-    "nombre": "Esmalte Sintético Mate",
-    "categoria": "Esmaltes",
+    "id": "sellador-fijador-concentrado",
+    "nombre": "Sellador - Fijador Concentrado",
+    "categoria": "Fondos y selladores",
     "unidad": "litros",
     "rendimiento": {
-      "min": 15,
-      "max": 15,
+      "min": 20,
+      "max": 25,
       "type": "areaPerUnitPerCoat",
-      "display": "15 m² por litro y por mano"
+      "display": "20 a 25 m² por litro de concentrado y por mano, diluido 1:2,5"
     },
     "envases": [
-      0.25,
-      0.5,
       1,
       4,
+      10,
+      20
+    ],
+    "manosDefault": 1,
+    "manosOpciones": [
+      1
+    ],
+    "manosRecomendadas": "1 mano, con dilución aproximada 1:2,5 en agua; ajustar hasta que la superficie quede mate.",
+    "recomendaciones": "El rendimiento indicado corresponde al producto concentrado correctamente diluido. Conviene ensayar primero en un sector de la pared.",
+    "tiempos": {
+      "entreManos": "No corresponde",
+      "final": "4 horas aproximadamente",
+      "tacto": "No especificado"
+    },
+    "preparacion": "Superficie limpia, seca, desengrasada, sin polvo ni pintura vieja mal adherida.",
+    "aplicacion": "Pincel, rodillo o soplete, diluido aproximadamente 1:2,5 en agua.",
+    "acabado": "Mate / transparente",
+    "uso": "Yeso y mampostería interior o exterior para uniformar absorción y mejorar la adhesión."
+  },
+  {
+    "id": "plus-ecologico-interior",
+    "nombre": "Plus Ecológico Interior",
+    "categoria": "Látex interior",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 7,
+      "max": 13,
+      "type": "areaPerUnitPerCoat",
+      "display": "7 a 13 m² por litro y por mano"
+    },
+    "envases": [
+      4,
+      10,
+      20
+    ],
+    "manosDefault": 2,
+    "manosOpciones": [
+      1,
+      2,
+      3
+    ],
+    "manosRecomendadas": "Habitualmente 2 manos; su cubrimiento es progresivo y aumenta al secar.",
+    "recomendaciones": "Dejar al menos 5 horas entre manos. En mampostería nueva utilizar Sellador - Fijador Concentrado.",
+    "tiempos": {
+      "entreManos": "5 horas",
+      "final": "7 días",
+      "tacto": "1,5 horas"
+    },
+    "preparacion": "Superficies limpias, secas y desengrasadas, sin polvo ni partes flojas. Eliminar hongos y enjuagar.",
+    "aplicacion": "Pincel, rodillo o soplete, con consistencia normal o mínima cantidad de agua.",
+    "acabado": "Mate",
+    "uso": "Paredes interiores de revoque, ladrillo y fibrocemento."
+  },
+  {
+    "id": "profesional-interior",
+    "nombre": "Profesional Interior",
+    "categoria": "Látex interior",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 8,
+      "max": 10,
+      "type": "areaPerUnitPerCoat",
+      "display": "8 a 10 m² por litro y por mano"
+    },
+    "envases": [
+      1,
+      4,
+      10,
+      20
+    ],
+    "manosDefault": 2,
+    "manosOpciones": [
+      1,
+      2,
+      3
+    ],
+    "manosRecomendadas": "Habitualmente 2 manos, según cobertura y estado de la superficie.",
+    "recomendaciones": "Sobre mampostería nueva aplicar Sellador - Fijador Concentrado; sobre superficies pulverulentas, usarlo diluido aproximadamente 1:2,5.",
+    "tiempos": {
+      "entreManos": "3 horas",
+      "final": "5 a 7 días",
+      "tacto": "1,5 horas"
+    },
+    "preparacion": "Superficies interiores limpias, secas, desengrasadas y libres de polvo. Eliminar pintura floja y hongos.",
+    "aplicacion": "Pincel, rodillo o soplete, con consistencia normal o mínima dilución con agua.",
+    "acabado": "Mate aterciopelado",
+    "uso": "Paredes interiores de revoque, papel, paneles acústicos, fibrocemento y ladrillo."
+  },
+  {
+    "id": "concentrado-interior-exterior",
+    "nombre": "Concentrado Interior / Exterior",
+    "categoria": "Látex interior y exterior",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 9,
+      "max": 14,
+      "type": "areaPerUnitPerCoat",
+      "display": "9 a 14 m² por litro y por mano"
+    },
+    "envases": [
+      1,
+      4,
+      10,
       20
     ],
     "manosDefault": 2,
@@ -200,16 +362,51 @@ window.PRODUCTS = [
       3
     ],
     "manosRecomendadas": "No especificado en la ficha.",
-    "recomendaciones": "Aplicar con consistencia normal o diluido con aguarrás mineral de buena calidad.",
+    "recomendaciones": "Aplicar con consistencia normal o diluido con 5 a 15% de agua, dejando pasar por lo menos 4 horas entre manos.",
     "tiempos": {
-      "entreManos": "12 horas",
-      "final": "24 horas",
-      "tacto": "2 horas"
+      "entreManos": "4 horas",
+      "final": "7 días",
+      "tacto": "1 hora"
     },
-    "preparacion": "Superficies limpias, secas y desengrasadas, libres de óxido y polvo. Manchas de hongos: lavar con lavandina y enjuagar.",
+    "preparacion": "Superficies limpias, secas, desengrasadas, sin polvo ni pintura vieja mal adherida. Eliminar hongos con solución de lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete.",
     "acabado": "Mate",
-    "uso": "Superficies interiores: revoque, yeso, paneles, fibrocemento, ladrillo y más."
+    "uso": "Interior y exterior: revoque, cemento, ladrillo, frentes, yeso, paneles, fibrocemento, madera, metal y más."
+  },
+  {
+    "id": "latex-dekorativ",
+    "nombre": "Látex Dekorativ",
+    "categoria": "Látex interior y exterior",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 8,
+      "max": 14,
+      "type": "areaPerUnitPerCoat",
+      "display": "8 a 14 m² por litro y por mano"
+    },
+    "envases": [
+      1,
+      4,
+      10,
+      20
+    ],
+    "manosDefault": 2,
+    "manosOpciones": [
+      1,
+      2,
+      3
+    ],
+    "manosRecomendadas": "Habitualmente 2 manos, según cobertura.",
+    "recomendaciones": "Acepta colores tintométricos base P y T. Dejar al menos 3 horas entre manos.",
+    "tiempos": {
+      "entreManos": "3 horas",
+      "final": "7 días",
+      "tacto": "1,5 horas"
+    },
+    "preparacion": "Superficies limpias, secas, desengrasadas, sin óxido ni polvo. Tratar hongos con lavandina y enjuagar.",
+    "aplicacion": "Pincel, rodillo o soplete, normal o con mínima cantidad de agua.",
+    "acabado": "Mate",
+    "uso": "Superficies interiores y exteriores de mampostería."
   },
   {
     "id": "latex-nacional-interior-exterior",
@@ -246,6 +443,113 @@ window.PRODUCTS = [
     "uso": "Paredes exteriores e interiores: revoques, ladrillos, fibrocementos y materiales para frentes."
   },
   {
+    "id": "profesional-exterior-interior",
+    "nombre": "Profesional Exterior - Interior (Lavable - Antihongo)",
+    "categoria": "Látex interior y exterior",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 8,
+      "max": 14,
+      "type": "areaPerUnitPerCoat",
+      "display": "8 a 14 m² por litro y por mano"
+    },
+    "envases": [
+      1,
+      4,
+      10,
+      20
+    ],
+    "manosDefault": 2,
+    "manosOpciones": [
+      1,
+      2,
+      3
+    ],
+    "manosRecomendadas": "Habitualmente 2 manos, según cobertura y estado de la superficie.",
+    "recomendaciones": "En mampostería nueva aplicar previamente Sellador - Fijador Concentrado diluido. No se recomienda sobre madera exterior.",
+    "tiempos": {
+      "entreManos": "3 horas",
+      "final": "7 días",
+      "tacto": "1,5 horas"
+    },
+    "preparacion": "Superficie limpia, seca, desengrasada y sin polvo. Eliminar hongos con solución de lavandina y enjuagar.",
+    "aplicacion": "Pincel, rodillo o soplete, normal o con la mínima cantidad de agua necesaria.",
+    "acabado": "Mate aterciopelado",
+    "uso": "Ambientes interiores y exteriores; revoque, ladrillo, fibrocemento y materiales para frentes."
+  },
+  {
+    "id": "cielorraso",
+    "nombre": "Cielorraso",
+    "categoria": "Látex y cielorrasos",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 8,
+      "max": 12,
+      "type": "areaPerUnitPerCoat",
+      "display": "8 a 12 m² por litro y por mano"
+    },
+    "envases": [
+      1,
+      4,
+      10,
+      20
+    ],
+    "manosDefault": 2,
+    "manosOpciones": [
+      1,
+      2,
+      3
+    ],
+    "manosRecomendadas": "Segunda mano, de ser necesaria, a las 4 horas.",
+    "recomendaciones": "Si la absorción lo exige, agregar la mínima cantidad de agua necesaria.",
+    "tiempos": {
+      "entreManos": "4 horas (segunda mano si es necesaria)",
+      "final": "No especificado en la ficha",
+      "tacto": "4 horas"
+    },
+    "preparacion": "Superficie limpia, sin grasa ni polvo. Las manchas de hongos se lavan con lavandina y se enjuagan con abundante agua.",
+    "aplicacion": "Rodillo, pincel, soplete o máquina pulverizadora.",
+    "acabado": "Mate",
+    "uso": "Cielorrasos de revoque; útil en cocinas, baños, lavaderos y ambientes con condensación."
+  },
+  {
+    "id": "barniz-marino-satinado",
+    "nombre": "Barniz Marino Satinado",
+    "categoria": "Maderas y barnices",
+    "unidad": "litros",
+    "rendimiento": {
+      "min": 12,
+      "max": 12,
+      "type": "areaPerUnitPerCoat",
+      "display": "12 m² por litro y por mano"
+    },
+    "envases": [
+      0.25,
+      0.5,
+      1,
+      4,
+      20
+    ],
+    "manosDefault": 3,
+    "manosOpciones": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "manosRecomendadas": "3 o 4 manos sobre madera nueva; 2 o 3 sobre superficies barnizadas en buen estado.",
+    "recomendaciones": "Puede aplicarse a pincel, rodillo o soplete. Sobre madera nueva: primera mano diluida 2:1 en aguarrás; luego barniz sin diluir.",
+    "tiempos": {
+      "entreManos": "8 horas",
+      "final": "No especificado en la ficha",
+      "tacto": "5 horas"
+    },
+    "preparacion": "Superficies limpias, secas, desengrasadas, sin polvo ni barniz viejo mal adherido.",
+    "aplicacion": "Pincel, rodillo o soplete.",
+    "acabado": "Satinado",
+    "uso": "Protección y embellecimiento de maderas de uso exterior e interior."
+  },
+  {
     "id": "paris-piedra",
     "nombre": "Revestimiento Acrílico Texturado Impermeable París Piedra",
     "categoria": "Revestimientos texturados",
@@ -277,5 +581,38 @@ window.PRODUCTS = [
     "aplicacion": "Llana metálica o soplete de salpicar.",
     "acabado": "Mate texturado e impermeable; textura fina",
     "uso": "Paredes interiores y exteriores: hormigón, revoque, ladrillo y placas de yeso."
+  },
+  {
+    "id": "manta-elastica-fibrada",
+    "nombre": "Manta Elástica Impermeable Fibrada",
+    "categoria": "Techos e impermeabilización",
+    "unidad": "kg",
+    "rendimiento": {
+      "min": 1,
+      "max": 1.25,
+      "type": "quantityPerAreaFinished",
+      "display": "1 a 1,25 kg/m² de trabajo terminado, con 4 manos"
+    },
+    "envases": [
+      1.25,
+      5,
+      10,
+      20
+    ],
+    "manosDefault": 4,
+    "manosOpciones": [
+      4
+    ],
+    "manosRecomendadas": "4 manos: primera diluida aproximadamente 30% con agua y tres manos sin diluir.",
+    "recomendaciones": "El consumo ya incluye las 4 manos. No diluir la segunda, tercera ni cuarta mano. Aplicar sobre superficies no demasiado cálidas.",
+    "tiempos": {
+      "entreManos": "4 horas",
+      "final": "24 horas",
+      "tacto": "No especificado"
+    },
+    "preparacion": "Superficie limpia, seca, desengrasada, sin óxido ni polvo. Redondear aristas y ángulos.",
+    "aplicacion": "Pincel, rodillo o soplete. Se recomienda pincel para la imprimación.",
+    "acabado": "Mate, fibrado e impermeable",
+    "uso": "Losas, techos, revoques y ladrillos."
   }
 ];

@@ -1,36 +1,23 @@
-# Calculadora Fadepa
+# Calculadora Fadepa — versión 0.3
 
-## Versión 0.2
+Versión con base técnica ampliada y tratamiento seguro de productos especiales.
 
-Primera versión con motor real de cálculo y base técnica inicial.
+## Novedades
 
-### Incluye
-
-- 8 productos FADEPA.
-- Cálculo por rendimiento por mano o consumo por m² terminado.
-- Criterio conservador, promedio u óptimo.
-- Cálculo en litros o kilos.
-- Optimizador de presentaciones.
-- Buscador y filtro por categoría.
-- Ficha técnica resumida.
-- Fórmula aplicada.
+- 18 productos en la base.
+- Nuevas familias: fondos y selladores, látex profesionales, epoxi y techos.
+- Kits A+B mostrados como juegos completos.
+- Cálculo epoxi diferenciado para cemento y metal.
+- Productos con rendimiento por trabajo terminado.
+- Productos informativos con cálculo bloqueado cuando la ficha mezcla volumen y peso sin indicar densidad.
+- Detección manual de duplicados en las fichas utilizadas.
 - PWA instalable y funcionamiento offline.
 
-### Productos iniciales
+## Actualización
 
-1. Barniz Marino Satinado
-2. Cielorraso
-3. Concentrado Interior / Exterior
-4. Esmalte al Agua
-5. Esmalte para Azulejos
-6. Esmalte Sintético Mate
-7. Látex Nacional Interior / Exterior
-8. Revestimiento Acrílico Texturado Impermeable París Piedra
+Subir todos los archivos a la raíz del repositorio y reemplazar los existentes.
+No borrar `.github` ni la configuración de GitHub Pages.
 
-### Carga desde celular
+## Seguridad técnica
 
-Subir todos los archivos de este ZIP a la raíz del repositorio. GitHub reemplazará los archivos existentes y agregará `products.js`.
-
-### Importante
-
-Los resultados son orientativos y dependen de la absorción, textura, herramienta y estado de la superficie.
+La calculadora no inventa equivalencias. Cuando una ficha expresa rendimiento en litros y vende los kits en gramos sin densidad oficial, muestra la información y solicita consulta técnica.
