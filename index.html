@@ -7,203 +7,117 @@
   <meta name="description" content="Calculadora de rendimiento de productos FADEPA">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Calculadora Fadepa">
-
   <title>Calculadora Fadepa</title>
-
   <link rel="manifest" href="./manifest.json">
-  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+  <link rel="icon" href="./icon-192.png">
   <link rel="apple-touch-icon" href="./icon-192.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div class="brand-lockup" aria-label="FADEPA Pinturas">
-        <div class="fadepa-mark">
-          <span class="fadepa-word">FADEPA</span>
-          <span class="fadepa-subword">PINTURAS</span>
-        </div>
+  <header class="app-header">
+    <div class="brand-lockup">
+      <div class="fadepa-mark"><span>FADEPA</span><small>PINTURAS</small></div>
+      <div><p class="eyebrow light">Herramienta técnica</p><h1>Calculadora Fadepa</h1></div>
+    </div>
+    <button class="install-button" id="installButton" hidden>↓ <span>Instalar</span></button>
+  </header>
 
-        <div class="brand-copy">
-          <p class="eyebrow">Herramienta técnica</p>
-          <h1>Calculadora Fadepa</h1>
-        </div>
+  <main class="main-content">
+    <section class="intro-card">
+      <div>
+        <p class="eyebrow violet">Versión 0.2 · Base técnica inicial</p>
+        <h2>Calculá producto y envases para cada superficie</h2>
+        <p>La primera base contiene 8 productos con rendimientos, presentaciones y datos técnicos.</p>
       </div>
+      <div class="status-chip"><span class="status-dot"></span><span id="connectionText">Disponible sin conexión</span></div>
+    </section>
 
-      <button class="icon-button" id="installButton" type="button" hidden>
-        <span aria-hidden="true">↓</span>
-        <span>Instalar</span>
-      </button>
-    </header>
+    <section class="calculator-grid">
+      <form class="panel" id="calculatorForm">
+        <div class="panel-heading"><span class="step-number">01</span><div><p class="eyebrow">Datos del trabajo</p><h3>Configuración</h3></div></div>
 
-    <main class="main-content">
-      <section class="intro-card">
-        <div>
-          <p class="eyebrow violet">Cálculo de rendimiento</p>
-          <h2>Estimá la cantidad necesaria para tu trabajo</h2>
-          <p>
-            Seleccioná el producto, ingresá la superficie y ajustá las manos y el margen de desperdicio.
-          </p>
+        <div class="field">
+          <label for="searchProduct">Buscar producto</label>
+          <input id="searchProduct" type="search" placeholder="Ej.: esmalte, látex, cielorraso">
         </div>
-        <div class="status-chip" id="connectionStatus">
-          <span class="status-dot"></span>
-          <span>Disponible sin conexión</span>
-        </div>
-      </section>
 
-      <section class="calculator-grid" aria-label="Calculadora">
-        <form class="panel input-panel" id="calculatorForm">
-          <div class="panel-heading">
-            <span class="step-number">01</span>
-            <div>
-              <p class="eyebrow">Datos del trabajo</p>
-              <h3>Configuración</h3>
-            </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="category">Categoría</label>
+            <select id="category"><option value="">Todas</option></select>
           </div>
-
           <div class="field">
             <label for="product">Producto</label>
-            <select id="product" name="product">
-              <option value="">Seleccionar producto</option>
-              <option value="demo">Producto de demostración</option>
-            </select>
-            <p class="field-help">
-              En las próximas versiones se incorporará el catálogo completo de fichas técnicas.
-            </p>
+            <select id="product"><option value="">Seleccionar producto</option></select>
           </div>
+        </div>
 
-          <div class="field-row">
-            <div class="field">
-              <label for="surface">Superficie</label>
-              <div class="input-with-unit">
-                <input id="surface" name="surface" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Ej.: 45">
-                <span>m²</span>
-              </div>
-            </div>
+        <div class="product-preview" id="productPreview" hidden></div>
 
-            <div class="field">
-              <label for="coats">Manos</label>
-              <select id="coats" name="coats">
-                <option value="1">1 mano</option>
-                <option value="2" selected>2 manos</option>
-                <option value="3">3 manos</option>
-                <option value="4">4 manos</option>
-              </select>
-            </div>
-          </div>
-
+        <div class="field-row">
           <div class="field">
-            <div class="label-line">
-              <label for="waste">Margen de desperdicio</label>
-              <output id="wasteOutput" for="waste">10%</output>
-            </div>
-            <input id="waste" name="waste" type="range" min="0" max="25" step="5" value="10">
-            <div class="range-labels">
-              <span>0%</span>
-              <span>25%</span>
-            </div>
+            <label for="surface">Superficie</label>
+            <div class="input-with-unit"><input id="surface" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Ej.: 45"><span>m²</span></div>
           </div>
-
-          <button class="primary-button" type="submit">
-            Calcular cantidad
-            <span aria-hidden="true">→</span>
-          </button>
-
-          <button class="text-button" id="resetButton" type="button">
-            Limpiar datos
-          </button>
-        </form>
-
-        <aside class="panel result-panel" aria-live="polite">
-          <div class="panel-heading">
-            <span class="step-number violet-bg">02</span>
-            <div>
-              <p class="eyebrow">Resultado estimado</p>
-              <h3>Cantidad necesaria</h3>
-            </div>
+          <div class="field" id="coatsField">
+            <label for="coats">Manos</label>
+            <select id="coats"></select>
           </div>
+        </div>
 
-          <div class="result-empty" id="resultEmpty">
-            <div class="result-symbol" aria-hidden="true">∑</div>
-            <p>Completá los datos para ver el resultado.</p>
-          </div>
+        <div class="field">
+          <label for="criterion">Criterio de rendimiento</label>
+          <select id="criterion">
+            <option value="min">Conservador · mayor consumo</option>
+            <option value="average" selected>Promedio · estimación equilibrada</option>
+            <option value="max">Óptimo · menor consumo</option>
+          </select>
+          <p class="field-help">Solo se aplica cuando la ficha indica un rango de rendimiento.</p>
+        </div>
 
-          <div class="result-content" id="resultContent" hidden>
-            <p class="result-label">Cantidad total</p>
-            <div class="result-value">
-              <strong id="litersResult">0</strong>
-              <span>litros</span>
-            </div>
+        <div class="field">
+          <div class="label-line"><label for="waste">Margen de desperdicio</label><output id="wasteOutput">10%</output></div>
+          <input id="waste" type="range" min="0" max="30" step="5" value="10">
+          <div class="range-labels"><span>0%</span><span>30%</span></div>
+        </div>
 
-            <div class="result-divider"></div>
+        <button class="primary-button" type="submit">Calcular cantidad <span>→</span></button>
+        <button class="text-button" id="resetButton" type="button">Limpiar datos</button>
+      </form>
 
-            <div class="result-breakdown">
-              <div>
-                <span>Rendimiento de prueba</span>
-                <strong>10 m²/L por mano</strong>
-              </div>
-              <div>
-                <span>Superficie ingresada</span>
-                <strong id="surfaceResult">0 m²</strong>
-              </div>
-              <div>
-                <span>Manos</span>
-                <strong id="coatsResult">0</strong>
-              </div>
-              <div>
-                <span>Desperdicio</span>
-                <strong id="wasteResult">0%</strong>
-              </div>
-            </div>
+      <aside class="panel result-panel" aria-live="polite">
+        <div class="panel-heading"><span class="step-number violet-bg">02</span><div><p class="eyebrow">Resultado de compra</p><h3>Cantidad necesaria</h3></div></div>
+        <div class="result-empty" id="resultEmpty"><div class="result-symbol">∑</div><p>Seleccioná un producto e ingresá la superficie.</p></div>
+        <div id="resultContent" hidden>
+          <p class="result-product" id="resultProduct"></p>
+          <p class="result-label">Cantidad calculada</p>
+          <div class="result-value"><strong id="amountResult">0</strong><span id="unitResult">litros</span></div>
+          <p class="result-caption" id="resultCaption"></p>
+          <div class="result-divider"></div>
+          <h4>Envases recomendados</h4>
+          <div class="packages" id="packages"></div>
+          <div class="purchase-summary" id="purchaseSummary"></div>
+        </div>
+      </aside>
+    </section>
 
-            <div class="notice">
-              <strong>Modo demostración</strong>
-              <p>
-                Este resultado usa un rendimiento de prueba. No debe utilizarse como indicación técnica definitiva.
-              </p>
-            </div>
-          </div>
-        </aside>
-      </section>
+    <section class="details-grid" id="detailsSection" hidden>
+      <article class="panel technical-panel">
+        <div class="panel-heading compact"><span class="step-number">03</span><div><p class="eyebrow">Información del producto</p><h3>Ficha técnica resumida</h3></div></div>
+        <dl class="tech-list" id="technical"></dl>
+      </article>
+      <article class="panel formula-panel">
+        <div class="panel-heading compact"><span class="step-number violet-bg">04</span><div><p class="eyebrow">Transparencia</p><h3>Fórmula aplicada</h3></div></div>
+        <div class="formula-box" id="formula"></div>
+        <div class="notice"><strong>Resultado orientativo</strong><p>La absorción, textura, herramienta y estado de la superficie pueden modificar el consumo real.</p></div>
+      </article>
+    </section>
+  </main>
 
-      <section class="secondary-grid">
-        <article class="info-card">
-          <div class="info-icon">✓</div>
-          <div>
-            <h3>Diseñada para celulares</h3>
-            <p>Interfaz responsive, botones amplios y lectura clara para usarla en obra o en el mostrador.</p>
-          </div>
-        </article>
-
-        <article class="info-card">
-          <div class="info-icon">⌁</div>
-          <div>
-            <h3>Preparada para trabajar offline</h3>
-            <p>La estructura PWA ya está incluida. Después de la primera carga podrá abrirse sin conexión.</p>
-          </div>
-        </article>
-
-        <article class="info-card">
-          <div class="info-icon">＋</div>
-          <div>
-            <h3>Base lista para ampliar</h3>
-            <p>El catálogo técnico se incorporará sin tener que rediseñar la aplicación.</p>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <footer class="app-footer">
-      <span>Calculadora Fadepa · Versión 0.1</span>
-      <span>Base visual y PWA</span>
-    </footer>
-  </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-
+  <footer class="app-footer"><span>Calculadora Fadepa · Versión 0.2</span><span>8 productos en la base inicial</span></footer>
+  <div class="toast" id="toast" hidden></div>
+  <script src="./products.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

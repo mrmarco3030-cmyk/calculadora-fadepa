@@ -1,42 +1,36 @@
 # Calculadora Fadepa
 
-Versión 0.1 de la aplicación web instalable para calcular el rendimiento de productos FADEPA.
+## Versión 0.2
 
-## Estado de esta versión
+Primera versión con motor real de cálculo y base técnica inicial.
 
-- Identidad visual basada en turquesa y violeta institucional.
-- Diseño responsive para celular y computadora.
-- Estructura PWA instalable.
-- Funcionamiento básico sin conexión.
-- Motor de demostración con rendimiento genérico de 10 m²/L por mano.
-- Todavía no contiene la base técnica definitiva de productos.
+### Incluye
 
-## Archivos
+- 8 productos FADEPA.
+- Cálculo por rendimiento por mano o consumo por m² terminado.
+- Criterio conservador, promedio u óptimo.
+- Cálculo en litros o kilos.
+- Optimizador de presentaciones.
+- Buscador y filtro por categoría.
+- Ficha técnica resumida.
+- Fórmula aplicada.
+- PWA instalable y funcionamiento offline.
 
-Todos los archivos están ubicados en la raíz para facilitar la carga desde un celular:
+### Productos iniciales
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `manifest.json`
-- `service-worker.js`
-- `icon-192.png`
-- `icon-512.png`
+1. Barniz Marino Satinado
+2. Cielorraso
+3. Concentrado Interior / Exterior
+4. Esmalte al Agua
+5. Esmalte para Azulejos
+6. Esmalte Sintético Mate
+7. Látex Nacional Interior / Exterior
+8. Revestimiento Acrílico Texturado Impermeable París Piedra
 
-## Publicación con GitHub Pages
+### Carga desde celular
 
-En GitHub:
+Subir todos los archivos de este ZIP a la raíz del repositorio. GitHub reemplazará los archivos existentes y agregará `products.js`.
 
-1. Abrir `Settings`.
-2. Entrar en `Pages`.
-3. Elegir `Deploy from a branch`.
-4. Seleccionar `main` y `/(root)`.
-5. Guardar.
+### Importante
 
-La URL esperada será:
-
-`https://mrmarco3030-cmyk.github.io/calculadora-fadepa/`
-
-## Advertencia
-
-El producto y rendimiento disponibles en esta versión son únicamente de demostración. No deben usarse como indicación técnica definitiva.
+Los resultados son orientativos y dependen de la absorción, textura, herramienta y estado de la superficie.

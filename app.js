@@ -1,143 +1,26 @@
 (() => {
-  "use strict";
-
-  const DEMO_COVERAGE = 10;
-
-  const form = document.getElementById("calculatorForm");
-  const product = document.getElementById("product");
-  const surface = document.getElementById("surface");
-  const coats = document.getElementById("coats");
-  const waste = document.getElementById("waste");
-  const wasteOutput = document.getElementById("wasteOutput");
-  const resetButton = document.getElementById("resetButton");
-  const resultEmpty = document.getElementById("resultEmpty");
-  const resultContent = document.getElementById("resultContent");
-  const litersResult = document.getElementById("litersResult");
-  const surfaceResult = document.getElementById("surfaceResult");
-  const coatsResult = document.getElementById("coatsResult");
-  const wasteResult = document.getElementById("wasteResult");
-  const connectionStatus = document.getElementById("connectionStatus");
-  const installButton = document.getElementById("installButton");
-  const toast = document.getElementById("toast");
-
-  let deferredInstallPrompt = null;
-  let toastTimer = null;
-
-  const numberFormatter = new Intl.NumberFormat("es-AR", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
-  });
-
-  function showToast(message) {
-    clearTimeout(toastTimer);
-    toast.textContent = message;
-    toast.hidden = false;
-    toastTimer = setTimeout(() => {
-      toast.hidden = true;
-    }, 3200);
-  }
-
-  function updateWasteLabel() {
-    wasteOutput.value = `${waste.value}%`;
-    wasteOutput.textContent = `${waste.value}%`;
-  }
-
-  function updateConnectionStatus() {
-    const online = navigator.onLine;
-    connectionStatus.querySelector("span:last-child").textContent = online
-      ? "Disponible sin conexión"
-      : "Trabajando sin conexión";
-  }
-
-  function showResult({ total, area, coatCount, wastePercent }) {
-    litersResult.textContent = numberFormatter.format(total);
-    surfaceResult.textContent = `${numberFormatter.format(area)} m²`;
-    coatsResult.textContent = coatCount;
-    wasteResult.textContent = `${wastePercent}%`;
-    resultEmpty.hidden = true;
-    resultContent.hidden = false;
-  }
-
-  function hideResult() {
-    resultContent.hidden = true;
-    resultEmpty.hidden = false;
-  }
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const selectedProduct = product.value;
-    const area = Number(surface.value);
-    const coatCount = Number(coats.value);
-    const wastePercent = Number(waste.value);
-
-    if (!selectedProduct) {
-      product.focus();
-      showToast("Seleccioná un producto.");
-      return;
-    }
-
-    if (!Number.isFinite(area) || area <= 0) {
-      surface.focus();
-      showToast("Ingresá una superficie mayor a cero.");
-      return;
-    }
-
-    const baseLiters = (area * coatCount) / DEMO_COVERAGE;
-    const total = baseLiters * (1 + wastePercent / 100);
-
-    showResult({
-      total: Math.ceil(total * 10) / 10,
-      area,
-      coatCount,
-      wastePercent,
-    });
-  });
-
-  resetButton.addEventListener("click", () => {
-    form.reset();
-    updateWasteLabel();
-    hideResult();
-    product.focus();
-  });
-
-  waste.addEventListener("input", updateWasteLabel);
-  window.addEventListener("online", updateConnectionStatus);
-  window.addEventListener("offline", updateConnectionStatus);
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredInstallPrompt = event;
-    installButton.hidden = false;
-  });
-
-  installButton.addEventListener("click", async () => {
-    if (!deferredInstallPrompt) {
-      showToast("Usá el menú del navegador y elegí “Agregar a pantalla principal”.");
-      return;
-    }
-
-    deferredInstallPrompt.prompt();
-    await deferredInstallPrompt.userChoice;
-    deferredInstallPrompt = null;
-    installButton.hidden = true;
-  });
-
-  window.addEventListener("appinstalled", () => {
-    installButton.hidden = true;
-    showToast("Calculadora Fadepa instalada.");
-  });
-
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-      try {
-        await navigator.serviceWorker.register("./service-worker.js");
-      } catch (error) {
-        console.error("No se pudo registrar el service worker:", error);
-      }
-    });
-  }
-
-  updateWasteLabel();
-  updateConnectionStatus();
+'use strict';
+const PRODUCTS = window.PRODUCTS || [];
+const $ = (id) => document.getElementById(id);
+const els = {form:$('calculatorForm'),search:$('searchProduct'),category:$('category'),product:$('product'),surface:$('surface'),coats:$('coats'),coatsField:$('coatsField'),criterion:$('criterion'),waste:$('waste'),wasteOutput:$('wasteOutput'),preview:$('productPreview'),reset:$('resetButton'),empty:$('resultEmpty'),content:$('resultContent'),amount:$('amountResult'),unit:$('unitResult'),resultProduct:$('resultProduct'),caption:$('resultCaption'),packages:$('packages'),purchase:$('purchaseSummary'),details:$('detailsSection'),technical:$('technical'),formula:$('formula'),toast:$('toast'),install:$('installButton'),connection:$('connectionText')};
+let deferredPrompt=null,timer=null;
+const fmt=new Intl.NumberFormat('es-AR',{maximumFractionDigits:2});
+function toast(msg){clearTimeout(timer);els.toast.textContent=msg;els.toast.hidden=false;timer=setTimeout(()=>els.toast.hidden=true,3000)}
+function selected(){return PRODUCTS.find(p=>p.id===els.product.value)}
+function categories(){return [...new Set(PRODUCTS.map(p=>p.categoria))].sort((a,b)=>a.localeCompare(b,'es'))}
+function renderCategories(){categories().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;els.category.appendChild(o)})}
+function renderProducts(keep=true){const prev=keep?els.product.value:'';const q=els.search.value.trim().toLowerCase();const cat=els.category.value;const list=PRODUCTS.filter(p=>(!cat||p.categoria===cat)&&(!q||`${p.nombre} ${p.categoria}`.toLowerCase().includes(q)));els.product.innerHTML='<option value="">Seleccionar producto</option>';list.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=p.nombre;els.product.appendChild(o)});if(list.some(p=>p.id===prev))els.product.value=prev;else updateProduct()}
+function renderCoats(p){els.coats.innerHTML='';const opts=p?.manosOpciones||[1,2,3,4];opts.forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=`${n} ${n===1?'mano':'manos'}`;if(n===(p?.manosDefault||2))o.selected=true;els.coats.appendChild(o)});const fixed=p?.rendimiento.type==='quantityPerAreaFinished';els.coatsField.hidden=fixed}
+function updateProduct(){const p=selected();if(!p){els.preview.hidden=true;renderCoats(null);hideResults();return}renderCoats(p);els.preview.innerHTML=`<strong>${p.rendimiento.display}</strong><span>${p.categoria} · Presentaciones: ${p.envases.map(x=>fmt.format(x)).join(', ')} ${p.unidad}</span>`;els.preview.hidden=false;hideResults()}
+function yieldValue(p){const r=p.rendimiento;if(els.criterion.value==='min')return r.type==='areaPerUnitPerCoat'?r.min:r.max;if(els.criterion.value==='max')return r.type==='areaPerUnitPerCoat'?r.max:r.min;return (r.min+r.max)/2}
+function combination(required,sizes){const sorted=[...sizes].sort((a,b)=>b-a);const smallest=Math.min(...sorted);const maxUnits=Math.ceil(required/smallest)+2;let best=null;function rec(i,total,counts){if(total>=required){const excess=total-required;const units=counts.reduce((a,b)=>a+b,0);const score=excess*1000+units;if(!best||score<best.score)best={score,total,counts:[...counts]};return}if(i>=sorted.length)return;const size=sorted[i];const max=Math.min(maxUnits,Math.ceil((required-total)/size)+2);for(let n=max;n>=0;n--){counts[i]=n;rec(i+1,total+n*size,counts);counts[i]=0}}rec(0,0,new Array(sorted.length).fill(0));return {items:sorted.map((size,i)=>({size,count:best?.counts[i]||0})).filter(x=>x.count),total:best?.total||0}}
+function calculate(){const p=selected();const area=Number(els.surface.value);if(!p){toast('Seleccioná un producto.');els.product.focus();return}if(!Number.isFinite(area)||area<=0){toast('Ingresá una superficie mayor a cero.');els.surface.focus();return}const waste=Number(els.waste.value);const criterion=yieldValue(p);let base,total,coats=Number(els.coats.value)||1,formula;if(p.rendimiento.type==='areaPerUnitPerCoat'){base=area*coats/criterion;total=base*(1+waste/100);formula=`(${fmt.format(area)} m² × ${coats} manos ÷ ${fmt.format(criterion)} m²/${p.unidad.slice(0,-1)}) × 1,${String(waste).padStart(2,'0')}`}else{base=area*criterion;total=base*(1+waste/100);formula=`(${fmt.format(area)} m² × ${fmt.format(criterion)} ${p.unidad}/m²) × 1,${String(waste).padStart(2,'0')}`}total=Math.ceil(total*100)/100;const combo=combination(total,p.envases);showResults(p,area,coats,waste,criterion,total,combo,formula)}
+function showResults(p,area,coats,waste,criterion,total,combo,formula){els.empty.hidden=true;els.content.hidden=false;els.details.hidden=false;els.resultProduct.textContent=p.nombre;els.amount.textContent=fmt.format(total);els.unit.textContent=p.unidad;els.caption.textContent=p.rendimiento.type==='areaPerUnitPerCoat'?`${fmt.format(area)} m² · ${coats} manos · ${waste}% de desperdicio · rendimiento usado ${fmt.format(criterion)} m² por ${p.unidad.slice(0,-1)} y mano`:`${fmt.format(area)} m² · trabajo terminado · ${waste}% de desperdicio · consumo usado ${fmt.format(criterion)} ${p.unidad}/m²`;els.packages.innerHTML=combo.items.map(x=>`<div class="package-chip"><strong>${x.count}×</strong> ${fmt.format(x.size)} ${p.unidad}</div>`).join('');els.purchase.textContent=`Compra total sugerida: ${fmt.format(combo.total)} ${p.unidad}. Sobrante estimado: ${fmt.format(Math.max(0,combo.total-total))} ${p.unidad}.`;const rows=[['Rendimiento',p.rendimiento.display],['Manos recomendadas',p.manosRecomendadas],['Presentaciones',p.envases.map(x=>fmt.format(x)).join(', ')+' '+p.unidad],['Uso',p.uso],['Preparación',p.preparacion],['Aplicación',p.aplicacion],['Acabado',p.acabado],['Secado al tacto',p.tiempos.tacto],['Entre manos',p.tiempos.entreManos],['Secado final',p.tiempos.final],['Recomendaciones',p.recomendaciones]];els.technical.innerHTML=rows.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('');els.formula.innerHTML=`<strong>${formula}</strong><span>Resultado: ${fmt.format(total)} ${p.unidad}</span>`;els.details.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function hideResults(){els.content.hidden=true;els.empty.hidden=false;els.details.hidden=true}
+function reset(){els.form.reset();els.search.value='';els.category.value='';els.wasteOutput.textContent='10%';renderProducts(false);renderCoats(null);hideResults()}
+els.search.addEventListener('input',()=>renderProducts(false));els.category.addEventListener('change',()=>renderProducts(false));els.product.addEventListener('change',updateProduct);els.waste.addEventListener('input',()=>els.wasteOutput.textContent=`${els.waste.value}%`);els.form.addEventListener('submit',e=>{e.preventDefault();calculate()});els.reset.addEventListener('click',reset);
+function connection(){els.connection.textContent=navigator.onLine?'Disponible sin conexión':'Trabajando sin conexión'}window.addEventListener('online',connection);window.addEventListener('offline',connection);
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;els.install.hidden=false});els.install.addEventListener('click',async()=>{if(!deferredPrompt){toast('Usá el menú del navegador y elegí “Agregar a pantalla principal”.');return}deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;els.install.hidden=true});
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(console.error));
+renderCategories();renderProducts(false);renderCoats(null);connection();
 })();
