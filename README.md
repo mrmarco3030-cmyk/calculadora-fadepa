@@ -1,4 +1,4 @@
-# Calculadora Fadepa — versión 0.3.2
+# Calculadora Fadepa — versión 0.3.3
 
 Versión con base técnica ampliada y tratamiento seguro de productos especiales.
 
@@ -25,7 +25,7 @@ La calculadora no inventa equivalencias. Cuando una ficha expresa rendimiento en
 
 ## Control de revisiones
 
-Desde la versión 0.3.2 cada producto registra:
+Desde la versión 0.3.3 cada producto registra:
 
 - número de revisión;
 - versión de la ficha;
@@ -49,3 +49,17 @@ La búsqueda ahora consulta:
 - etiquetas técnicas.
 
 También normaliza mayúsculas y tildes, interpreta algunos sinónimos frecuentes y tolera errores pequeños de escritura. Esta versión no modifica el motor de cálculo ni los rendimientos existentes.
+
+
+## Corrección de precisión — v0.3.3
+
+Las búsquedas técnicas como `madera`, `metal`, `techo`, `humedad` o `baño`
+ahora se comparan únicamente contra campos estructurados de compatibilidad:
+
+- superficies;
+- ambientes;
+- problemas;
+- etiquetas técnicas.
+
+Ya no se usan textos generales de preparación, aplicación o recomendaciones
+para decidir si un producto es compatible con una superficie.

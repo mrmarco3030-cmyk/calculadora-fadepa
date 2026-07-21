@@ -1,4 +1,4 @@
-const CACHE_NAME='calculadora-fadepa-v0.3.2';
+const CACHE_NAME='calculadora-fadepa-v0.3.3';
 const APP_SHELL=['./','./index.html','./styles.css','./products.js','./app.js','./manifest.json','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

@@ -28,10 +28,38 @@ const SEARCH_SYNONYMS={
 'hongo':['antihongo','fungicida','moho']
 };
 function normalizeText(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
-function searchText(p){return normalizeText([p.nombre,p.categoria,p.uso,p.preparacion,p.aplicacion,p.acabado,p.recomendaciones,...(p.superficies||[]),...(p.ambientes||[]),...(p.problemas||[]),...(p.tags||[])].join(' '))}
+const STRICT_TECHNICAL_TERMS=new Set([
+'techo','cubierta','azotea','losa','terraza','cielorraso',
+'pared','muro','revoque','mamposteria','yeso','ladrillo',
+'humedo','humedad','filtracion','condensacion','gotera','impermeabilizacion',
+'piso','suelo','cemento','hormigon',
+'metal','acero','aluminio','hierro',
+'madera','puerta','ventana','mueble','deck',
+'bano','cocina','exterior','interior',
+'sellador','fijador','imprimacion','membrana','impermeabilizante',
+'lavable','hongo','antihongo','moho','azulejo','ceramica'
+]);
+function broadSearchText(p){return normalizeText([p.nombre,p.categoria,p.uso,p.acabado,...(p.tags||[])].join(' '))}
+function technicalSearchText(p){return normalizeText([...(p.superficies||[]),...(p.ambientes||[]),...(p.problemas||[]),...(p.tags||[])].join(' '))}
 function editDistance(a,b){if(a===b)return 0;if(!a.length)return b.length;if(!b.length)return a.length;let prev=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){const row=[i];for(let j=1;j<=b.length;j++)row[j]=Math.min(row[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));prev=row}return prev[b.length]}
 function tokenMatches(token,words,text){if(text.includes(token))return true;if(token.length<4)return false;const maxDistance=token.length>=8?2:1;return words.some(word=>Math.abs(word.length-token.length)<=maxDistance&&editDistance(token,word)<=maxDistance)}
-function matchesSearch(p,query){const normalized=normalizeText(query);if(!normalized)return true;const text=searchText(p);const words=text.split(' ');const tokens=normalized.split(' ').filter(Boolean);return tokens.every(token=>{const alternatives=[token,...(SEARCH_SYNONYMS[token]||[])];return alternatives.some(term=>tokenMatches(normalizeText(term),words,text))})}
+function isStrictTechnicalToken(token){if(STRICT_TECHNICAL_TERMS.has(token))return true;return Object.entries(SEARCH_SYNONYMS).some(([key,values])=>key===token||values.map(normalizeText).includes(token))}
+function matchesSearch(p,query){
+  const normalized=normalizeText(query);
+  if(!normalized)return true;
+  const broad=broadSearchText(p);
+  const technical=technicalSearchText(p);
+  const broadWords=broad.split(' ');
+  const technicalWords=technical.split(' ');
+  const tokens=normalized.split(' ').filter(Boolean);
+  return tokens.every(token=>{
+    const alternatives=[token,...(SEARCH_SYNONYMS[token]||[])].map(normalizeText);
+    const strict=isStrictTechnicalToken(token);
+    const text=strict?technical:broad;
+    const words=strict?technicalWords:broadWords;
+    return alternatives.some(term=>tokenMatches(term,words,text));
+  });
+}
 function renderProducts(keep=true){const prev=keep?els.product.value:'';const q=els.search.value.trim();const cat=els.category.value;const list=PRODUCTS.filter(p=>(!cat||p.categoria===cat)&&matchesSearch(p,q));els.product.innerHTML='<option value="">Seleccionar producto</option>';list.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=p.nombre;els.product.appendChild(o)});if(els.searchStatus){const filters=[];if(q)filters.push(`búsqueda “${q}”`);if(cat)filters.push(cat);els.searchStatus.textContent=list.length===0?'No se encontraron productos. Probá otra palabra o quitá el filtro.':`${list.length} ${list.length===1?'producto encontrado':'productos encontrados'}${filters.length?' para '+filters.join(' · '):''}.`}if(list.some(p=>p.id===prev))els.product.value=prev;else updateProduct()}
 function renderCoats(p){els.coats.innerHTML='';const opts=p?.manosOpciones||[1,2,3,4];opts.forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=`${n} ${n===1?'mano':'manos'}`;if(n===(p?.manosDefault||2))o.selected=true;els.coats.appendChild(o)});const fixed=p?.rendimiento.type==='quantityPerAreaFinished'||p?.calculable===false;els.coatsField.hidden=fixed}
 function updateProduct(){const p=selected();if(!p){els.preview.hidden=true;renderCoats(null);hideResults();return}renderCoats(p);const pres=p.calculable===false?'Cálculo automático no disponible':`Presentaciones: ${p.envases.map(x=>p.packageLabels?.[String(x)]||`${fmt.format(x)} ${p.unidad}`).join(' · ')}`;els.preview.innerHTML=`<strong>${p.rendimiento.display}</strong><span>${p.categoria} · ${pres}</span><small>Ficha Rev. ${p.revision||1} · Actualizada ${p.fechaActualizacion||'sin fecha'} · ${p.estadoFicha||'vigente'}</small>`;els.preview.hidden=false;hideResults()}
