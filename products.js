@@ -34,7 +34,19 @@ window.PRODUCTS = [
     "preparacion": "Superficie cementicia absorbente, limpia y porosa. No aplicar sobre pisos pulidos, cerámicos ni porcelanatos. Temperatura superior a 10 °C.",
     "aplicacion": "Pincel o rodillo epoxi; también pulverizador según ficha.",
     "acabado": "Duro, impermeable y resistente a la abrasión",
-    "uso": "Pisos y estructuras interiores de hormigón o mortero."
+    "uso": "Pisos y estructuras interiores de hormigón o mortero.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "pintura-epoxi-metal",
@@ -73,7 +85,19 @@ window.PRODUCTS = [
     "preparacion": "Metal limpio, seco, desengrasado y correctamente acondicionado. Temperatura superior a 10 °C.",
     "aplicacion": "Pincel, rodillo epoxi o pulverizador.",
     "acabado": "Duro, impermeable y resistente a la abrasión",
-    "uso": "Acero, aluminio y estructuras metálicas interiores."
+    "uso": "Acero, aluminio y estructuras metálicas interiores.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "porcelanato-liquido-autonivelante",
@@ -103,7 +127,19 @@ window.PRODUCTS = [
     "preparacion": "Superficie limpia y preparada. Uso interior.",
     "aplicacion": "Mezclar A+B lentamente durante un minuto, verter y esparcir con espátula o llana dentada en 30-40 minutos.",
     "acabado": "Brillante y autonivelante",
-    "uso": "Pisos, mesas, mesadas, cuadros y pisos 3D sobre madera, concreto, cerámica, cemento u hormigón."
+    "uso": "Pisos, mesas, mesadas, cuadros y pisos 3D sobre madera, concreto, cerámica, cemento u hormigón.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "porcelanato-liquido-sellador",
@@ -129,7 +165,19 @@ window.PRODUCTS = [
     "preparacion": "Limpiar, tratar con ácido muriático o Limpiador Restos de Obra 50/50 con agua, hidrolavar y esperar 24 horas.",
     "aplicacion": "Mezclar A+B, incorporar igual volumen de Diluyente Epoxi antes de 5 minutos y aplicar con rodillo epoxi.",
     "acabado": "Transparente brillante",
-    "uso": "Sellado interior de pisos de cemento alisado."
+    "uso": "Sellado interior de pisos de cemento alisado.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "esmalte-sintetico-mate",
@@ -165,7 +213,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas y desengrasadas, libres de óxido y polvo. Manchas de hongos: lavar con lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete.",
     "acabado": "Mate",
-    "uso": "Superficies interiores: revoque, yeso, paneles, fibrocemento, ladrillo y más."
+    "uso": "Superficies interiores: revoque, yeso, paneles, fibrocemento, ladrillo y más.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "esmalte-al-agua",
@@ -200,7 +260,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas y desengrasadas, libres de óxido y polvo.",
     "aplicacion": "Pincel, rodillo o soplete; dilución con agua de 5 a 10%.",
     "acabado": "Brillante, mate y satinado",
-    "uso": "Interior y exterior sobre mampostería, madera o metal."
+    "uso": "Interior y exterior sobre mampostería, madera o metal.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "esmalte-azulejos",
@@ -234,7 +306,19 @@ window.PRODUCTS = [
     "preparacion": "Superficie limpia y seca, sin grasa, polvillo, hongos, humedad, sarro ni jabón. Desgastar suavemente el esmaltado y tratar con ácido muriático diluido 1:1; enjuagar.",
     "aplicacion": "Pincel o rodillo de pelo corto tipo epoxi. Diluir entre 10% o según requiera la superficie.",
     "acabado": "Satinado",
-    "uso": "Paredes de azulejos o cerámicos en interior y exterior: baños, lavaderos y cocinas."
+    "uso": "Paredes de azulejos o cerámicos en interior y exterior: baños, lavaderos y cocinas.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "sellador-fijador-concentrado",
@@ -267,7 +351,19 @@ window.PRODUCTS = [
     "preparacion": "Superficie limpia, seca, desengrasada, sin polvo ni pintura vieja mal adherida.",
     "aplicacion": "Pincel, rodillo o soplete, diluido aproximadamente 1:2,5 en agua.",
     "acabado": "Mate / transparente",
-    "uso": "Yeso y mampostería interior o exterior para uniformar absorción y mejorar la adhesión."
+    "uso": "Yeso y mampostería interior o exterior para uniformar absorción y mejorar la adhesión.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "plus-ecologico-interior",
@@ -301,7 +397,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas y desengrasadas, sin polvo ni partes flojas. Eliminar hongos y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete, con consistencia normal o mínima cantidad de agua.",
     "acabado": "Mate",
-    "uso": "Paredes interiores de revoque, ladrillo y fibrocemento."
+    "uso": "Paredes interiores de revoque, ladrillo y fibrocemento.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "profesional-interior",
@@ -336,7 +444,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies interiores limpias, secas, desengrasadas y libres de polvo. Eliminar pintura floja y hongos.",
     "aplicacion": "Pincel, rodillo o soplete, con consistencia normal o mínima dilución con agua.",
     "acabado": "Mate aterciopelado",
-    "uso": "Paredes interiores de revoque, papel, paneles acústicos, fibrocemento y ladrillo."
+    "uso": "Paredes interiores de revoque, papel, paneles acústicos, fibrocemento y ladrillo.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "concentrado-interior-exterior",
@@ -371,7 +491,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas, desengrasadas, sin polvo ni pintura vieja mal adherida. Eliminar hongos con solución de lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete.",
     "acabado": "Mate",
-    "uso": "Interior y exterior: revoque, cemento, ladrillo, frentes, yeso, paneles, fibrocemento, madera, metal y más."
+    "uso": "Interior y exterior: revoque, cemento, ladrillo, frentes, yeso, paneles, fibrocemento, madera, metal y más.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "latex-dekorativ",
@@ -406,7 +538,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas, desengrasadas, sin óxido ni polvo. Tratar hongos con lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete, normal o con mínima cantidad de agua.",
     "acabado": "Mate",
-    "uso": "Superficies interiores y exteriores de mampostería."
+    "uso": "Superficies interiores y exteriores de mampostería.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "latex-nacional-interior-exterior",
@@ -440,7 +584,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas y desengrasadas, libres de óxido y polvo. Manchas de hongos: lavar con lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete.",
     "acabado": "Mate",
-    "uso": "Paredes exteriores e interiores: revoques, ladrillos, fibrocementos y materiales para frentes."
+    "uso": "Paredes exteriores e interiores: revoques, ladrillos, fibrocementos y materiales para frentes.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "profesional-exterior-interior",
@@ -475,7 +631,19 @@ window.PRODUCTS = [
     "preparacion": "Superficie limpia, seca, desengrasada y sin polvo. Eliminar hongos con solución de lavandina y enjuagar.",
     "aplicacion": "Pincel, rodillo o soplete, normal o con la mínima cantidad de agua necesaria.",
     "acabado": "Mate aterciopelado",
-    "uso": "Ambientes interiores y exteriores; revoque, ladrillo, fibrocemento y materiales para frentes."
+    "uso": "Ambientes interiores y exteriores; revoque, ladrillo, fibrocemento y materiales para frentes.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "cielorraso",
@@ -510,7 +678,19 @@ window.PRODUCTS = [
     "preparacion": "Superficie limpia, sin grasa ni polvo. Las manchas de hongos se lavan con lavandina y se enjuagan con abundante agua.",
     "aplicacion": "Rodillo, pincel, soplete o máquina pulverizadora.",
     "acabado": "Mate",
-    "uso": "Cielorrasos de revoque; útil en cocinas, baños, lavaderos y ambientes con condensación."
+    "uso": "Cielorrasos de revoque; útil en cocinas, baños, lavaderos y ambientes con condensación.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "barniz-marino-satinado",
@@ -547,7 +727,19 @@ window.PRODUCTS = [
     "preparacion": "Superficies limpias, secas, desengrasadas, sin polvo ni barniz viejo mal adherido.",
     "aplicacion": "Pincel, rodillo o soplete.",
     "acabado": "Satinado",
-    "uso": "Protección y embellecimiento de maderas de uso exterior e interior."
+    "uso": "Protección y embellecimiento de maderas de uso exterior e interior.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "paris-piedra",
@@ -580,7 +772,19 @@ window.PRODUCTS = [
     "preparacion": "Sobre superficies nuevas o de absorción despareja, pintar con Látex FADEPA color base Humo Blanco. Las superficies deben estar firmes, secas, limpias y libres de grasitud.",
     "aplicacion": "Llana metálica o soplete de salpicar.",
     "acabado": "Mate texturado e impermeable; textura fina",
-    "uso": "Paredes interiores y exteriores: hormigón, revoque, ladrillo y placas de yeso."
+    "uso": "Paredes interiores y exteriores: hormigón, revoque, ladrillo y placas de yeso.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   },
   {
     "id": "manta-elastica-fibrada",
@@ -613,6 +817,18 @@ window.PRODUCTS = [
     "preparacion": "Superficie limpia, seca, desengrasada, sin óxido ni polvo. Redondear aristas y ángulos.",
     "aplicacion": "Pincel, rodillo o soplete. Se recomienda pincel para la imprimación.",
     "acabado": "Mate, fibrado e impermeable",
-    "uso": "Losas, techos, revoques y ladrillos."
+    "uso": "Losas, techos, revoques y ladrillos.",
+    "revision": 1,
+    "versionFicha": "1.0",
+    "fechaActualizacion": "2026-07-21",
+    "estadoFicha": "vigente",
+    "fuenteFicha": "Ficha técnica FADEPA",
+    "historialCambios": [
+      {
+        "revision": 1,
+        "fecha": "2026-07-21",
+        "detalle": "Alta inicial en la base técnica de la calculadora."
+      }
+    ]
   }
 ];

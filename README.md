@@ -1,4 +1,4 @@
-# Calculadora Fadepa — versión 0.3
+# Calculadora Fadepa — versión 0.3.1
 
 Versión con base técnica ampliada y tratamiento seguro de productos especiales.
 
@@ -21,3 +21,17 @@ No borrar `.github` ni la configuración de GitHub Pages.
 ## Seguridad técnica
 
 La calculadora no inventa equivalencias. Cuando una ficha expresa rendimiento en litros y vende los kits en gramos sin densidad oficial, muestra la información y solicita consulta técnica.
+
+
+## Control de revisiones
+
+Desde la versión 0.3.1 cada producto registra:
+
+- número de revisión;
+- versión de la ficha;
+- fecha de actualización;
+- estado de vigencia;
+- fuente documental;
+- historial de cambios.
+
+La aplicación muestra estos datos dentro de la información técnica del producto.
