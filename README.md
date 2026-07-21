@@ -1,4 +1,4 @@
-# Calculadora Fadepa — versión 0.3.1
+# Calculadora Fadepa — versión 0.3.2
 
 Versión con base técnica ampliada y tratamiento seguro de productos especiales.
 
@@ -25,7 +25,7 @@ La calculadora no inventa equivalencias. Cuando una ficha expresa rendimiento en
 
 ## Control de revisiones
 
-Desde la versión 0.3.1 cada producto registra:
+Desde la versión 0.3.2 cada producto registra:
 
 - número de revisión;
 - versión de la ficha;
@@ -35,3 +35,17 @@ Desde la versión 0.3.1 cada producto registra:
 - historial de cambios.
 
 La aplicación muestra estos datos dentro de la información técnica del producto.
+
+
+## Buscador inteligente — v0.3.2
+
+La búsqueda ahora consulta:
+
+- nombre y categoría;
+- uso y aplicación;
+- superficies compatibles;
+- ambientes;
+- problemas que ayuda a resolver;
+- etiquetas técnicas.
+
+También normaliza mayúsculas y tildes, interpreta algunos sinónimos frecuentes y tolera errores pequeños de escritura. Esta versión no modifica el motor de cálculo ni los rendimientos existentes.

@@ -46,7 +46,30 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "cemento",
+      "hormigón",
+      "mortero",
+      "piso"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "alto tránsito",
+      "desgaste",
+      "protección"
+    ],
+    "tags": [
+      "epoxi",
+      "piso",
+      "industrial",
+      "cementicio",
+      "garage",
+      "taller"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "pintura-epoxi-metal",
@@ -97,7 +120,29 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "metal",
+      "acero",
+      "aluminio",
+      "estructura metálica"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "corrosión",
+      "desgaste",
+      "protección"
+    ],
+    "tags": [
+      "epoxi",
+      "metal",
+      "industrial",
+      "máquina",
+      "estructura"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "porcelanato-liquido-autonivelante",
@@ -139,7 +184,31 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "piso",
+      "madera",
+      "concreto",
+      "cerámica",
+      "cemento",
+      "mesada"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "nivelación",
+      "acabado decorativo"
+    ],
+    "tags": [
+      "porcelanato",
+      "autonivelante",
+      "epoxi",
+      "piso 3d",
+      "mesa",
+      "mesada"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "porcelanato-liquido-sellador",
@@ -177,7 +246,25 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "cemento alisado",
+      "piso"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "sellado",
+      "porosidad"
+    ],
+    "tags": [
+      "porcelanato",
+      "sellador",
+      "cemento",
+      "piso"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "esmalte-sintetico-mate",
@@ -225,7 +312,27 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "revoque",
+      "yeso",
+      "fibrocemento",
+      "ladrillo"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "protección",
+      "terminación"
+    ],
+    "tags": [
+      "esmalte",
+      "mate",
+      "pared",
+      "muro"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "esmalte-al-agua",
@@ -272,7 +379,29 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "mampostería",
+      "madera",
+      "metal"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "protección",
+      "terminación"
+    ],
+    "tags": [
+      "esmalte",
+      "agua",
+      "puerta",
+      "ventana",
+      "reja",
+      "mueble"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "esmalte-azulejos",
@@ -318,7 +447,30 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "azulejo",
+      "cerámica",
+      "pared"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior",
+      "baño",
+      "lavadero",
+      "cocina"
+    ],
+    "problemas": [
+      "renovación",
+      "terminación"
+    ],
+    "tags": [
+      "azulejos",
+      "cerámicos",
+      "baño",
+      "cocina"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "sellador-fijador-concentrado",
@@ -363,7 +515,31 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "yeso",
+      "mampostería",
+      "revoque",
+      "pared"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "absorción",
+      "porosidad",
+      "adherencia",
+      "superficie floja"
+    ],
+    "tags": [
+      "sellador",
+      "fijador",
+      "imprimación",
+      "preparación",
+      "obra nueva"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "plus-ecologico-interior",
@@ -409,7 +585,26 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "revoque",
+      "ladrillo",
+      "fibrocemento",
+      "pared"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "terminación"
+    ],
+    "tags": [
+      "látex",
+      "ecológico",
+      "hogar",
+      "pared"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "profesional-interior",
@@ -456,7 +651,29 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "revoque",
+      "papel",
+      "panel acústico",
+      "fibrocemento",
+      "ladrillo",
+      "pared"
+    ],
+    "ambientes": [
+      "interior"
+    ],
+    "problemas": [
+      "terminación"
+    ],
+    "tags": [
+      "látex",
+      "profesional",
+      "pared",
+      "hogar",
+      "obra"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "concentrado-interior-exterior",
@@ -503,7 +720,30 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "revoque",
+      "cemento",
+      "ladrillo",
+      "yeso",
+      "fibrocemento",
+      "pared"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "terminación"
+    ],
+    "tags": [
+      "látex",
+      "concentrado",
+      "frente",
+      "muro",
+      "pared"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "latex-dekorativ",
@@ -550,7 +790,26 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "mampostería",
+      "pared",
+      "muro"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "terminación"
+    ],
+    "tags": [
+      "látex",
+      "dekorativ",
+      "decorativo",
+      "pared"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "latex-nacional-interior-exterior",
@@ -596,7 +855,27 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "revoque",
+      "ladrillo",
+      "fibrocemento",
+      "pared"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "terminación"
+    ],
+    "tags": [
+      "látex",
+      "nacional",
+      "frente",
+      "muro"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "profesional-exterior-interior",
@@ -643,7 +922,31 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "revoque",
+      "ladrillo",
+      "fibrocemento",
+      "pared"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "hongos",
+      "lavado",
+      "intemperie"
+    ],
+    "tags": [
+      "látex",
+      "profesional",
+      "lavable",
+      "antihongo",
+      "frente",
+      "muro"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "cielorraso",
@@ -690,7 +993,30 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "cielorraso",
+      "techo interior",
+      "revoque"
+    ],
+    "ambientes": [
+      "interior",
+      "cocina",
+      "baño",
+      "lavadero"
+    ],
+    "problemas": [
+      "condensación",
+      "hongos"
+    ],
+    "tags": [
+      "cielorraso",
+      "techo",
+      "antihongo",
+      "humedad",
+      "vapor"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "barniz-marino-satinado",
@@ -739,7 +1065,28 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "madera"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "intemperie",
+      "protección",
+      "humedad"
+    ],
+    "tags": [
+      "barniz",
+      "marino",
+      "satinado",
+      "madera",
+      "puerta",
+      "ventana"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "paris-piedra",
@@ -784,7 +1131,32 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "hormigón",
+      "revoque",
+      "ladrillo",
+      "placa de yeso",
+      "pared"
+    ],
+    "ambientes": [
+      "interior",
+      "exterior"
+    ],
+    "problemas": [
+      "impermeabilización",
+      "terminación",
+      "fisuras finas"
+    ],
+    "tags": [
+      "revestimiento",
+      "texturado",
+      "piedra",
+      "parís",
+      "frente",
+      "muro"
+    ],
+    "searchVersion": 1
   },
   {
     "id": "manta-elastica-fibrada",
@@ -829,6 +1201,31 @@ window.PRODUCTS = [
         "fecha": "2026-07-21",
         "detalle": "Alta inicial en la base técnica de la calculadora."
       }
-    ]
+    ],
+    "superficies": [
+      "losa",
+      "techo",
+      "revoque",
+      "ladrillo",
+      "terraza"
+    ],
+    "ambientes": [
+      "exterior"
+    ],
+    "problemas": [
+      "humedad",
+      "filtración",
+      "grieta",
+      "impermeabilización"
+    ],
+    "tags": [
+      "manta",
+      "membrana",
+      "fibrada",
+      "techo",
+      "azotea",
+      "cubierta"
+    ],
+    "searchVersion": 1
   }
 ];
