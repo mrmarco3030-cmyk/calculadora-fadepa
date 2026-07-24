@@ -1,0 +1,1 @@
+Copiar las referencias del index y actualizar CACHE_NAME y APP_SHELL del service-worker.
