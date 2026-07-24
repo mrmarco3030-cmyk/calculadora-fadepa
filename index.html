@@ -26,9 +26,9 @@
   <main class="main-content">
     <section class="intro-card">
       <div>
-        <p class="eyebrow violet">Versión 0.3.3 · Búsqueda técnica precisa</p>
+        <p class="eyebrow violet">Versión 0.3.7 · Base técnica ampliada</p>
         <h2>Calculá producto y envases para cada superficie</h2>
-        <p>La base contiene 18 productos con rendimientos, presentaciones y datos técnicos.</p>
+        <p>La base contiene 35 productos y variantes con rendimientos, presentaciones y datos técnicos.</p>
       </div>
       <div class="status-chip"><span class="status-dot"></span><span id="connectionText">Disponible sin conexión</span></div>
     </section>
@@ -36,52 +36,26 @@
     <section class="calculator-grid">
       <form class="panel" id="calculatorForm">
         <div class="panel-heading"><span class="step-number">01</span><div><p class="eyebrow">Datos del trabajo</p><h3>Configuración</h3></div></div>
-
-        <div class="field">
-          <label for="searchProduct">Buscar producto</label>
-          <input id="searchProduct" type="search" placeholder="Ej.: esmalte, látex, cielorraso">
-        </div>
-
+        <div class="field"><label for="searchProduct">Buscar producto</label><input id="searchProduct" type="search" placeholder="Ej.: esmalte, látex, cielorraso"></div>
         <div class="field-row">
-          <div class="field">
-            <label for="category">Categoría</label>
-            <select id="category"><option value="">Todas</option></select>
-          </div>
-          <div class="field">
-            <label for="product">Producto</label>
-            <select id="product"><option value="">Seleccionar producto</option></select>
-          </div>
+          <div class="field"><label for="category">Categoría</label><select id="category"><option value="">Todas</option></select></div>
+          <div class="field"><label for="product">Producto</label><select id="product"><option value="">Seleccionar producto</option></select></div>
         </div>
-
         <div class="product-preview" id="productPreview" hidden></div>
-
         <div class="field-row">
-          <div class="field">
-            <label for="surface">Superficie</label>
-            <div class="input-with-unit"><input id="surface" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Ej.: 45"><span>m²</span></div>
-          </div>
-          <div class="field" id="coatsField">
-            <label for="coats">Manos</label>
-            <select id="coats"></select>
-          </div>
+          <div class="field"><label for="surface">Superficie</label><div class="input-with-unit"><input id="surface" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Ej.: 45"><span>m²</span></div></div>
+          <div class="field" id="coatsField"><label for="coats">Manos</label><select id="coats"></select></div>
         </div>
-
         <div class="field">
           <label for="criterion">Criterio de rendimiento</label>
-          <select id="criterion">
-            <option value="min">Conservador · mayor consumo</option>
-            <option value="average" selected>Promedio · estimación equilibrada</option>
-            <option value="max">Óptimo · menor consumo</option>
-          </select>
+          <select id="criterion"><option value="min">Conservador · mayor consumo</option><option value="average" selected>Promedio · estimación equilibrada</option><option value="max">Óptimo · menor consumo</option></select>
           <p class="field-help">Solo se aplica cuando la ficha indica un rango de rendimiento.</p>
         </div>
-
         <div class="field">
           <div class="label-line"><label for="waste">Margen de desperdicio</label><output id="wasteOutput">10%</output></div>
           <input id="waste" type="range" min="0" max="30" step="5" value="10">
           <div class="range-labels"><span>0%</span><span>30%</span></div>
         </div>
-
         <button class="primary-button" type="submit">Calcular cantidad <span>→</span></button>
         <button class="text-button" id="resetButton" type="button">Limpiar datos</button>
       </form>
@@ -90,34 +64,27 @@
         <div class="panel-heading"><span class="step-number violet-bg">02</span><div><p class="eyebrow">Resultado de compra</p><h3>Cantidad necesaria</h3></div></div>
         <div class="result-empty" id="resultEmpty"><div class="result-symbol">∑</div><p>Seleccioná un producto e ingresá la superficie.</p></div>
         <div id="resultContent" hidden>
-          <p class="result-product" id="resultProduct"></p>
-          <p class="result-label">Cantidad calculada</p>
+          <p class="result-product" id="resultProduct"></p><p class="result-label">Cantidad calculada</p>
           <div class="result-value"><strong id="amountResult">0</strong><span id="unitResult">litros</span></div>
-          <p class="result-caption" id="resultCaption"></p>
-          <div class="result-divider"></div>
-          <h4>Envases recomendados</h4>
-          <div class="packages" id="packages"></div>
-          <div class="purchase-summary" id="purchaseSummary"></div>
+          <p class="result-caption" id="resultCaption"></p><div class="result-divider"></div><h4>Envases recomendados</h4>
+          <div class="packages" id="packages"></div><div class="purchase-summary" id="purchaseSummary"></div>
         </div>
       </aside>
     </section>
 
     <section class="details-grid" id="detailsSection" hidden>
-      <article class="panel technical-panel">
-        <div class="panel-heading compact"><span class="step-number">03</span><div><p class="eyebrow">Información del producto</p><h3>Ficha técnica resumida</h3></div></div>
-        <dl class="tech-list" id="technical"></dl>
-      </article>
-      <article class="panel formula-panel">
-        <div class="panel-heading compact"><span class="step-number violet-bg">04</span><div><p class="eyebrow">Transparencia</p><h3>Fórmula aplicada</h3></div></div>
-        <div class="formula-box" id="formula"></div>
-        <div class="notice"><strong>Resultado orientativo</strong><p>La absorción, textura, herramienta y estado de la superficie pueden modificar el consumo real.</p></div>
-      </article>
+      <article class="panel technical-panel"><div class="panel-heading compact"><span class="step-number">03</span><div><p class="eyebrow">Información del producto</p><h3>Ficha técnica resumida</h3></div></div><dl class="tech-list" id="technical"></dl></article>
+      <article class="panel formula-panel"><div class="panel-heading compact"><span class="step-number violet-bg">04</span><div><p class="eyebrow">Transparencia</p><h3>Fórmula aplicada</h3></div></div><div class="formula-box" id="formula"></div><div class="notice"><strong>Resultado orientativo</strong><p>La absorción, textura, herramienta y estado de la superficie pueden modificar el consumo real.</p></div></article>
     </section>
   </main>
 
-  <footer class="app-footer"><span>Calculadora Fadepa · Versión 0.3.3</span><span>18 productos en la base técnica</span></footer>
+  <footer class="app-footer"><span>Calculadora Fadepa · Versión 0.3.7</span><span>35 productos y variantes en la base técnica</span></footer>
   <div class="toast" id="toast" hidden></div>
   <script src="./products.js"></script>
+  <script src="./products-segment-01-v0.3.4.js"></script>
+  <script src="./products-segment-02-v0.3.5.js"></script>
+  <script src="./products-segment-03-v0.3.6.js"></script>
+  <script src="./products-segment-04-v0.3.7.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
