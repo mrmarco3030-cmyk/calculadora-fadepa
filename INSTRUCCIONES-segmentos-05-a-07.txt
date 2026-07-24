@@ -1,0 +1,28 @@
+CALCULADORA FADEPA · SEGMENTOS 05 A 07
+
+Archivos incluidos:
+- products-segment-05-v0.3.8.js
+- products-segment-06-v0.3.9.js
+- products-segment-07-v0.4.0.js
+
+Agregar al final de index.html, después del segmento 04 y antes de app.js:
+
+<script src="./products-segment-05-v0.3.8.js"></script>
+<script src="./products-segment-06-v0.3.9.js"></script>
+<script src="./products-segment-07-v0.4.0.js"></script>
+<script src="./app.js"></script>
+
+Actualizar service-worker.js:
+1. Cambiar CACHE_NAME a calculadora-fadepa-v0.4.0
+2. Agregar los tres archivos nuevos a APP_SHELL.
+
+Productos incorporados:
+1. Esmalte Alta Temperatura hasta 600 °C
+2. Frentes y Muros
+3. Pintura Asfáltica Concentrada
+4. Impregnante para Madera Brillante
+5. Impregnante para Madera Satinado
+6. Piletas de Natación Acrílico Base Acuosa
+7. Fondo Blanco para Maderas
+8. Pintura a la Cal en Pasta (informativa, sin cálculo automático)
+9. Esmalte para Máquinas Agrícolas (informativo, sin cálculo de envases)
