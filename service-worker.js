@@ -1,5 +1,5 @@
-const CACHE_NAME='calculadora-fadepa-v0.4.1';
-const APP_SHELL=['./','./index.html','./styles.css','./products.js','./products-segment-01-v0.3.4.js','./products-segment-02-v0.3.5.js','./products-segment-03-v0.3.6.js','./products-segment-04-v0.3.7.js','./products-segment-05-v0.3.8.js','./products-segment-06-v0.3.9.js','./products-segment-07-v0.4.0.js','./products-segment-08-v0.4.1.js','./app.js','./manifest.json','./icon-192.png','./icon-512.png'];
+const CACHE_NAME='calculadora-fadepa-v0.4.2';
+const APP_SHELL=['./','./index.html','./styles.css','./products.js','./products-segment-01-v0.3.4.js','./products-segment-02-v0.3.5.js','./products-segment-03-v0.3.6.js','./products-segment-04-v0.3.7.js','./products-segment-05-v0.3.8.js','./products-segment-06-v0.3.9.js','./products-segment-07-v0.4.0.js','./products-segment-08-v0.4.1.js','./products-segment-09-v0.4.2.js','./app.js','./manifest.json','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE_NAME).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match('./index.html'))))});
